@@ -1,0 +1,2 @@
+- ##### Intellij Idea 通过 Tasks/build/jar 打包可执行jar，默认输出路径为`build/libs`
+- ##### 已包含模板代码，只需要新增工具进行打包就行。打包前记得修改`Main.kt`中的调用的工具。
