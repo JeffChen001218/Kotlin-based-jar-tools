@@ -5,6 +5,16 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
+tasks.jar.configure {
+    manifest {
+        attributes(mapOf("Main-Class" to "org.example.MainKt"))
+    }
+    configurations["compileClasspath"].forEach { file: File ->
+        from(zipTree(file.absoluteFile))
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 repositories {
     mavenCentral()
 }
